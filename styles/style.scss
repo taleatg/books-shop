@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+
+  .books-wrapper {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .book {
+        position: relative;
+        width: 280px;
+        height: 370px;
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+        padding: 10px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+
+        .image img {
+            width: 150px;
+            height: 200px;
+            display: flex;
+            margin: 0 auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            transition: 0.3s;
+        }
+
+        .book-info {
+
+            .author {
+                font-style: italic;
+                font-size: 14px;
+            }
+
+            .title {
+                font-weight: 600;
+                margin: 20px 0 10px;
+                font-size: 20px;
+            }
+        }
+
+        .price-block {
+            position: absolute;
+            bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: calc(100% - 20px);
+
+            .price {
+                font-size: 20px;
+            }
+
+            .cart {
+                width: 25px;
+                height: 25px;
+                padding: 5px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                transition: 1s;
+                cursor: pointer;
+
+                &:hover {
+                    background: yellowgreen;
+                }
+
+                &:active {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .show-more {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, -50%);
+            width: max-content;
+            font-size: 12px;
+            color: lightslategrey;
+            border-bottom: 1px solid lightslategrey;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                color: black;
+                border-bottom: 1px solid;
+
+                & ~ .image img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+  }
+}
