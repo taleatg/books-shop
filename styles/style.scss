@@ -4,105 +4,166 @@
 }
 
 body {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 16px;
-  font-family: Helvetica, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
 
-  .books-wrapper {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    .header {
+        background: url(../assets/image/books.jpg);
 
-    .book {
-        position: relative;
-        width: 280px;
-        height: 370px;
-        display: flex;
-        flex-direction: column;
-        margin: 15px;
-        padding: 10px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
-
-        .price-block {
-            position: absolute;
-            bottom: 25px;
+        .header-wrapper{
+            max-width: 1300px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: calc(100% - 20px);
+            padding: 20px 20px 70px;
+            .logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
 
-            .price {
-                font-size: 20px;
-            }
-
-            .cart {
-                width: 25px;
-                height: 25px;
-                padding: 5px;
-                background: rgba(0, 0, 0, 0.1);
-                border-radius: 10px;
-                transition: 1s;
-                cursor: pointer;
-
-                &:hover {
-                    background: yellowgreen;
+                &__icon {
+                    width: 70px;
+                    height: 60px;
                 }
 
-                &:active {
-                    border-radius: 50%;
+                h1 {
+                    font-size: 20px;
                 }
             }
-        }
 
-        .show-more {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            right: 50%;
-            transform: translate(-50%, -50%);
-            width: max-content;
-            font-size: 12px;
-            color: lightslategrey;
-            border-bottom: 1px solid lightslategrey;
-            cursor: pointer;
-            transition: 0.3s;
+            .cart-wrapper {
+                display: flex;
+                align-items: center;
 
-            &:hover {
-                color: black;
-                border-bottom: 1px solid;
+                .final-price {
+                    margin: 10px;
+                    font-size: 22px;
+                }
 
-                & ~ .image img {
-                    transform: scale(1.1);
+                .cart {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .number-of-books {
+                    position: absolute;
+                    top: 40px;
+                    left: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 25px;
+                    height: 25px;
+                    background: lightsalmon;
+                    border-radius: 10px;
                 }
             }
         }
     }
-  }
-}
 
-.author {
-    font-style: italic;
-    font-size: 14px;
-}
+    .books-wrapper {
+        max-width: 1340px;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
 
-.title {
-    font-weight: 600;
-    margin: 20px 0 10px;
-    font-size: 20px;
-}
+        .book {
+            position: relative;
+            width: 280px;
+            height: 370px;
+            display: flex;
+            flex-direction: column;
+            margin: 15px;
+            padding: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
 
-.image img {
-    width: 150px;
-    height: 200px;
-    display: flex;
-    margin: 0 auto;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    transition: 0.3s;
+            .price-block {
+                position: absolute;
+                bottom: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: calc(100% - 20px);
+
+                .price {
+                    font-size: 20px;
+                }
+
+                .cart {
+
+                    &:hover {
+                        background: yellowgreen;
+                    }
+
+                    &:active {
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .show-more {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, -50%);
+                width: max-content;
+                font-size: 12px;
+                color: lightslategrey;
+                border-bottom: 1px solid lightslategrey;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    color: black;
+                    border-bottom: 1px solid;
+
+                    & ~ .image img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+
+    .cart {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .author {
+        font-style: italic;
+        font-size: 14px;
+    }
+
+    .title {
+        font-weight: 600;
+        margin: 20px 0 10px;
+        font-size: 20px;
+    }
+
+    .image img {
+        width: 150px;
+        height: 200px;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        transition: 0.3s;
+    }
 }
 
 .book-information {
@@ -116,6 +177,7 @@ body {
     transform: translate(-50%, -50%);
     background: lightblue;
     border-radius: 5px;
+    transition: 0.5s;
 
     .close {
         position: absolute;
