@@ -44,30 +44,6 @@ body .books-wrapper .book {
   border-radius: 5px;
 }
 
-body .books-wrapper .book .image img {
-  width: 150px;
-  height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
-  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-body .books-wrapper .book .book-info .author {
-  font-style: italic;
-  font-size: 14px;
-}
-
-body .books-wrapper .book .book-info .title {
-  font-weight: 600;
-  margin: 20px 0 10px;
-  font-size: 20px;
-}
-
 body .books-wrapper .book .price-block {
   position: absolute;
   bottom: 25px;
@@ -132,4 +108,83 @@ body .books-wrapper .book .show-more:hover {
 body .books-wrapper .book .show-more:hover ~ .image img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.author {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.title {
+  font-weight: 600;
+  margin: 20px 0 10px;
+  font-size: 20px;
+}
+
+.image img {
+  width: 150px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.book-information {
+  padding: 20px;
+  position: fixed;
+  max-width: 540px;
+  width: calc(80vw - 20px);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: lightblue;
+  border-radius: 5px;
+}
+
+.book-information .close {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.book-information .close:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.book-information .close:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.book-information .image img {
+  width: 250px;
+  height: 320px;
+}
+
+.book-information .title, .book-information .author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.book-information .image {
+  margin: 20px 0 40px;
 }

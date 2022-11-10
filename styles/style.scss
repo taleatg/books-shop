@@ -28,29 +28,6 @@ body {
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
 
-        .image img {
-            width: 150px;
-            height: 200px;
-            display: flex;
-            margin: 0 auto;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            transition: 0.3s;
-        }
-
-        .book-info {
-
-            .author {
-                font-style: italic;
-                font-size: 14px;
-            }
-
-            .title {
-                font-weight: 600;
-                margin: 20px 0 10px;
-                font-size: 20px;
-            }
-        }
-
         .price-block {
             position: absolute;
             bottom: 25px;
@@ -106,4 +83,69 @@ body {
         }
     }
   }
+}
+
+.author {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.title {
+    font-weight: 600;
+    margin: 20px 0 10px;
+    font-size: 20px;
+}
+
+.image img {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: 0.3s;
+}
+
+.book-information {
+    padding: 20px;
+    position: fixed;
+    max-width: 540px;
+    width: calc(80vw - 20px);
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: lightblue;
+    border-radius: 5px;
+
+    .close {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.8);
+        }
+    }
+
+    .image img {
+        width: 250px;
+        height: 320px;
+    }
+
+    .title, .author {
+        display: flex;
+        justify-content: center;
+    }
+
+    .image {
+        margin: 20px 0 40px;
+    }
 }

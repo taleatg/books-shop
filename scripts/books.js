@@ -1,3 +1,5 @@
+import { addBookInformation } from './bookInformation.js';
+
 function addBooks () {
     const body = document.querySelector('body');
     const div = document.createElement('div');
@@ -14,8 +16,15 @@ function createBook (book) {
     const bookWrapper = document.createElement('div');
     bookWrapper.classList.add('book')
 
+    const showMore = document.createElement('div');
+    showMore.classList.add('show-more');
+    showMore.innerHTML= 'Show more';
+
+    showMore.addEventListener('click', () => {
+        addBookInformation(book);
+    });
+
     bookWrapper.innerHTML = `
-        <div class="show-more">Show more</div>
         <div class="image">
             <img src=${book.imageLink} alt=${book.title}>
         </div>
@@ -29,8 +38,9 @@ function createBook (book) {
                 <img src="../assets/svg/cart.svg" alt="cart">
             </div>
         </div>
-    `
+    `;
 
+    bookWrapper.prepend(showMore);
     return bookWrapper;
 }
 
