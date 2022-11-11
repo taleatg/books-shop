@@ -61,6 +61,7 @@ body .header .header-wrapper .cart-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 body .header .header-wrapper .cart-wrapper .final-price {
@@ -111,8 +112,8 @@ body .books-wrapper {
 
 body .books-wrapper .book {
   position: relative;
-  width: 280px;
-  height: 370px;
+  width: 215px;
+  height: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,10 +145,12 @@ body .books-wrapper .book .price-block {
 
 body .books-wrapper .book .price-block .price {
   font-size: 20px;
+  color: darkred;
+  font-weight: 600;
 }
 
 body .books-wrapper .book .price-block .cart:hover {
-  background: yellowgreen;
+  background-color: yellowgreen;
 }
 
 body .books-wrapper .book .price-block .cart:active {
@@ -178,8 +181,8 @@ body .books-wrapper .book .show-more:hover {
 }
 
 body .books-wrapper .book .show-more:hover ~ .image img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
 }
 
 body .cart {
@@ -187,7 +190,8 @@ body .cart {
   width: 25px;
   height: 25px;
   padding: 5px;
-  background: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: url(../assets/svg/cart.svg);
   border-radius: 10px;
   -webkit-transition: 1s;
   transition: 1s;
@@ -202,7 +206,7 @@ body .author {
 body .title {
   font-weight: 600;
   margin: 20px 0 10px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 body .image img {
@@ -218,10 +222,19 @@ body .image img {
   transition: 0.3s;
 }
 
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
 .book-information {
   padding: 20px;
   position: fixed;
-  max-width: 540px;
+  max-width: 400px;
   width: calc(80vw - 20px);
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -258,8 +271,12 @@ body .image img {
 }
 
 .book-information .image img {
-  width: 250px;
-  height: 320px;
+  width: 220px;
+  height: 300px;
+}
+
+.book-information .book-info {
+  margin-bottom: 20px;
 }
 
 .book-information .title, .book-information .author {
@@ -269,8 +286,50 @@ body .image img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 
 .book-information .image {
-  margin: 20px 0 40px;
+  margin: 20px 0 30px;
+}
+
+.basket-wrapper {
+  max-width: 1340px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.basket-wrapper .basket {
+  padding: 20px;
+  margin: 0 10px;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: 80%;
+  background-color: cadetblue;
+  overflow-y: scroll;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+  max-width: 520px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
 }

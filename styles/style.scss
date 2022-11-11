@@ -38,6 +38,7 @@ body {
             .cart-wrapper {
                 display: flex;
                 align-items: center;
+                cursor: pointer;
 
                 .final-price {
                     margin: 10px;
@@ -76,8 +77,8 @@ body {
 
         .book {
             position: relative;
-            width: 280px;
-            height: 370px;
+            width: 215px;
+            height: 350px;
             display: flex;
             flex-direction: column;
             margin: 15px;
@@ -95,12 +96,14 @@ body {
 
                 .price {
                     font-size: 20px;
+                    color: darkred;
+                    font-weight: 600;
                 }
 
                 .cart {
 
                     &:hover {
-                        background: yellowgreen;
+                        background-color: yellowgreen;
                     }
 
                     &:active {
@@ -127,7 +130,7 @@ body {
                     border-bottom: 1px solid;
 
                     & ~ .image img {
-                        transform: scale(1.1);
+                        transform: scale(1.08);
                     }
                 }
             }
@@ -139,7 +142,8 @@ body {
         width: 25px;
         height: 25px;
         padding: 5px;
-        background: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.1);
+        background-image: url(../assets/svg/cart.svg);
         border-radius: 10px;
         transition: 1s;
         cursor: pointer;
@@ -153,7 +157,7 @@ body {
     .title {
         font-weight: 600;
         margin: 20px 0 10px;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .image img {
@@ -166,10 +170,19 @@ body {
     }
 }
 
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
 .book-information {
     padding: 20px;
     position: fixed;
-    max-width: 540px;
+    max-width: 400px;
     width: calc(80vw - 20px);
     height: max-content;
     top: 50%;
@@ -198,16 +211,59 @@ body {
     }
 
     .image img {
-        width: 250px;
-        height: 320px;
+        width: 220px;
+        height: 300px;
+    }
+
+    .book-info {
+        margin-bottom: 20px;
     }
 
     .title, .author {
         display: flex;
         justify-content: center;
+        text-align: center;
     }
 
     .image {
-        margin: 20px 0 40px;
+        margin: 20px 0 30px;
     }
+}
+
+.basket-wrapper {
+    max-width: 1340px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    .basket {
+        padding: 20px;
+        margin: 0 10px;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        height: max-content;
+        max-height: 80%;
+        background-color: cadetblue;
+        overflow-y: scroll;
+        border-radius: 5px;
+        width: calc(100% - 20px);
+        max-width: 520px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
 }

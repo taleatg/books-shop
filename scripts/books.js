@@ -1,7 +1,7 @@
 import { addBookInformation } from './bookInformation.js';
+import { bookDescription, body } from './instance.js';
 
 function addBooks () {
-    const body = document.querySelector('body');
     const div = document.createElement('div');
 
     fetch('/scripts/books.json')
@@ -24,19 +24,10 @@ function createBook (book) {
         addBookInformation(book);
     });
 
-    bookWrapper.innerHTML = `
-        <div class="image">
-            <img src=${book.imageLink} alt=${book.title}>
-        </div>
-        <div class="book-info">
-            <div class="title">${book.title}</div>
-            <div class="author">${book.author}</div>
-        </div>
+    bookWrapper.innerHTML = bookDescription(book) + `
         <div class="price-block">
             <div class="price">$${book.price}</div>
-            <div class="cart">
-                <img src="../assets/svg/cart.svg" alt="cart">
-            </div>
+            <div class="cart" data-book='${JSON.stringify(book)}'></div>
         </div>
     `;
 
@@ -45,5 +36,6 @@ function createBook (book) {
 }
 
 export {
-    addBooks
+    addBooks,
+    bookDescription,
 };
