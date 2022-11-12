@@ -8,62 +8,66 @@ body {
     margin: 0 auto;
     font-size: 16px;
     font-family: Helvetica, sans-serif;
+    background: url(../assets/image/books.jpg);
+    background-size: cover;
 
     .header {
-        background: url(../assets/image/books.jpg);
+        background: rgba(255, 255, 255, 0.8);
+        margin-bottom: 50px;
 
-        .header-wrapper{
-            max-width: 1300px;
-            margin: 0 auto;
+        .logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 20px 20px 70px;
-            .logo {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+            justify-content: center;
 
-                &__icon {
-                    width: 70px;
-                    height: 60px;
-                }
-
-                h1 {
-                    font-size: 20px;
-                }
+            &__icon {
+                width: 70px;
+                height: 60px;
             }
 
-            .cart-wrapper {
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-
-                .final-price {
-                    margin: 10px;
-                    font-size: 22px;
-                }
-
-                .cart {
-                    width: 50px;
-                    height: 50px;
-                }
-
-                .number-of-books {
-                    position: absolute;
-                    top: 40px;
-                    left: 40px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 25px;
-                    height: 25px;
-                    background: lightsalmon;
-                    border-radius: 10px;
-                }
+            h1 {
+                font-size: 20px;
             }
         }
+
+        .cart-wrapper {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .final-price {
+                margin: 10px;
+                font-size: 22px;
+            }
+
+            .cart {
+                width: 50px;
+                height: 50px;
+            }
+
+            .number-of-books {
+                position: absolute;
+                top: 40px;
+                left: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 25px;
+                height: 25px;
+                background: lightsalmon;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .header-wrapper, .footer-wrapper {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
     }
 
     .books-wrapper {
@@ -85,6 +89,7 @@ body {
             padding: 10px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
             border-radius: 5px;
+            background: whitesmoke;
 
             .price-block {
                 position: absolute;
@@ -168,6 +173,38 @@ body {
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         transition: 0.3s;
     }
+
+    .footer {
+        background: rgba(255, 255, 255, 0.9);
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .links {
+            display: flex;
+
+            &__item { 
+                display: flex;
+                align-items: center;
+                transition: 0.3s;
+
+                &:first-child {
+                    margin-right: 15px;
+                }
+
+                .github {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .rs-school {
+                    height: 30px;
+                }
+            }
+        }
+    }
 }
 
 .overlay {
@@ -176,7 +213,11 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.no-scrolling {
+    overflow: hidden;
 }
 
 .book-information {
@@ -193,21 +234,9 @@ body {
     transition: 0.5s;
 
     .close {
-        position: absolute;
-        top: 0;
-        right: 5px;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        transition: 0.3s;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-
-        &:active {
-            transform: scale(0.8);
-        }
+        font-size: 26px;
+        right: 10px;
+        top: 5px;
     }
 
     .image img {
@@ -230,6 +259,25 @@ body {
     }
 }
 
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-left: 10px;
+    color: darkred;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover, .confirm-order:hover, .close-cart:hover, .links__item:hover {
+    transform: scale(1.1);
+}
+
+.close:active, .confirm-order:active, .close-cart:active, .links__item:active {
+    transform: scale(0.8);
+}
+
 .basket-wrapper {
     max-width: 1340px;
     position: absolute;
@@ -241,18 +289,73 @@ body {
     margin: 0 auto;
 
     .basket {
-        padding: 20px;
+        padding: 10px 0 20px;
         margin: 0 10px;
         position: absolute;
         top: 100px;
         right: 0;
-        height: max-content;
-        max-height: 80%;
         background-color: cadetblue;
-        overflow-y: scroll;
         border-radius: 5px;
         width: calc(100% - 20px);
         max-width: 520px;
+
+        .selected-books {
+            max-height: 75vh;
+            overflow-y: scroll;
+            margin-bottom: 15px;
+
+            .book {
+                position: relative;
+                display: flex;
+                margin: 20px 15px;
+                border-bottom: 1px solid;
+                padding-bottom: 20px;
+
+                .image img {
+                    width: 100px;
+                    height: 150px;
+                }
+
+                &-info {
+                    margin-left: 10px;
+                    width: calc(100% - 150px);
+
+                    .title {
+                        margin-top: 0;
+                    }
+                }
+
+                .price {
+                    position: absolute;
+                    left: 110px;
+                    bottom: 20px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+
+    .confirm-or-cancel {
+        display: flex;
+        justify-content: space-around;
+
+        .confirm-order, .close-cart {
+            padding: 10px 25px;
+            border: 2px solid darkgreen;
+            color: darkgreen;
+            width: max-content;
+            margin: 0 auto;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-cart {
+            border: 2px solid darkred;
+            color: darkred;
+        }
     }
 }
 
@@ -261,9 +364,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: cadetblue;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #888;
+}
+
+@media(max-width: 420px) {
+    .basket-wrapper .basket .selected-books .book {
+
+        .title, .price {
+            font-size: 14px;
+        }
+    }
 }

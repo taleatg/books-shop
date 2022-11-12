@@ -6,14 +6,13 @@ function addBookInformation (book) {
     overlay.classList.add('overlay');
 
     div.innerHTML = `
-        <div class="close">
-            <img src="../assets/svg/close.svg" alt="close">
-        </div>        
+        <div class="close">x</div>        
         ${bookDescription(book)}
         <div class="description">${book.description}</div>
     `;
 
     div.classList.add('book-information');
+    body.classList.add('no-scrolling');
     body.append(overlay, div);
 
     deleteBookInformation(div);
@@ -26,6 +25,7 @@ function deleteBookInformation (bookInfo) {
     close.addEventListener('click', () => {
         body.removeChild(bookInfo);
         body.removeChild(overlay);
+        body.classList.remove('no-scrolling');
     })
 }
 
