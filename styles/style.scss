@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 body {
     width: 100%;
     margin: 0 auto;
@@ -176,11 +181,6 @@ body {
 
     .footer {
         background: rgba(255, 255, 255, 0.9);
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
 
         .links {
             display: flex;
@@ -360,7 +360,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 1px;
 }
 
 ::-webkit-scrollbar-track {

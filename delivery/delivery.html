@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery</title>
+    <link rel="stylesheet" href="../styles/delivery.css">
+    <link rel="icon" href="/assets/icon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="header-wrapper">
+            <a class="logo" href="../index.html">
+                <img class="logo__icon" src="../assets/icon.ico" alt="icon">
+                <h1>Books shop</h1>
+            </a>
+            <div class="cart-wrapper">
+                <div class="final-price">$0</div>
+                <div class="cart">
+                    <div class="number-of-books">0</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form class="form">
+
+            <label class="name">
+                First name
+                <input type="text" minlength="4" class="first" placeholder="Name" required>
+                Last name
+                <input type="text" minlength="5" class="last" placeholder="Surname" required>
+            </label>
+
+            <label class="date">Delivery date
+                <input type="date" required>
+            </label>
+
+            <label class="address">
+                Street
+                <input type="text" minlength="5" class="street" placeholder="Street" required>
+                <div class="address__number">
+                    <div class="number">
+                        House number
+                        <input type="number" min="1" class="house" placeholder="House number" required>
+                    </div>
+                    <div class="number">
+                        Flat number
+                        <input type="number" class="flat" placeholder="Flat number" required>
+                    </div>
+                </div>
+            </label>
+
+            <div class="payment">
+                Payment information
+                <div class="payment__type">
+                    <label class="radiobutton">
+                        <input type="radio" name="payment" value="Cash" checked>
+                        Cash
+                    </label>
+                    <label class="radiobutton">
+                        <input type="radio" name="payment" value="Card">
+                        Card
+                    </label>
+                </div>
+            </div>
+
+            <div class="gifts">
+                Choose 2 gifts (optional):
+                <label>
+                    <input type="checkbox">
+                    <span>pack as a gift</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>add postcard</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>provide 2% discount to the next time</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>branded pen or pencil</span>
+                </label>
+            </div>
+
+            <button type="submit" class="confirm-order">Confirm</button>
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div>© 2022</div>
+            <div class="links">
+                <a href="https://github.com/taleatg" target="_blank" class="links__item">
+                    <img src="../assets/image/github.png" alt="github" class="github">
+                    <div>Tatsiana Dashuk</div>
+                </a>
+                <a href="https://rs.school/js-en/" target="_blank" class="links__item">
+                    <img src="../assets/image/rsschool.png" alt="rs-school" class="rs-school">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

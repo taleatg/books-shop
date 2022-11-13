@@ -84,9 +84,7 @@ function createCartBlock () {
     })
 
     confirmOrder.addEventListener('click', () => {
-        body.removeChild(basketWrapper);
-        body.removeChild(overlay);
-        console.log('confirm order')
+        location.href = '../delivery/delivery.html'
     })
 
     confirmOrCancel.append(closeCart, confirmOrder);

@@ -3,11 +3,6 @@
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
 body {
   width: 100%;
   margin: 0 auto;
@@ -235,6 +230,11 @@ body .footer {
   background: rgba(255, 255, 255, 0.9);
 }
 
+body .footer a {
+  text-decoration: none;
+  color: black;
+}
+
 body .footer .links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -453,4 +453,146 @@ body .footer .links__item .rs-school {
   .basket-wrapper .basket .selected-books .book .title, .basket-wrapper .basket .selected-books .book .price {
     font-size: 14px;
   }
+}
+
+body {
+  font-size: 18px;
+}
+
+body .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+  max-width: 420px;
+  background: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+body .form input {
+  outline: none;
+  height: 30px;
+  padding: 0 10px;
+}
+
+body .form .name, body .form .address, body .form .date, body .form .payment, body .form .gifts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .form .name input, body .form .name label, body .form .address input, body .form .address label, body .form .date input, body .form .date label, body .form .payment input, body .form .payment label, body .form .gifts input, body .form .gifts label {
+  font-size: 14px;
+}
+
+body .form .name input, body .form .address input {
+  margin: 10px 0 20px;
+}
+
+body .form .date input {
+  margin: 10px 0 20px;
+  max-width: 195px;
+}
+
+body .form .address__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .form .address__number .number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .form .address__number .number input {
+  max-width: 150px;
+}
+
+body .form .payment__type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+body .form .payment__type .radiobutton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+body .form .payment__type .radiobutton input {
+  margin-right: 5px;
+}
+
+body .form .gifts {
+  margin-bottom: 20px;
+}
+
+body .form .gifts label:first-child {
+  margin-top: 5px;
+}
+
+body .form .gifts label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .form .gifts label input {
+  margin-right: 5px;
+}
+
+body .footer {
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.confirm-order {
+  padding: 10px 25px;
+  border: 2px solid darkgreen;
+  color: darkgreen;
+  border-radius: 5px;
+  width: 210px;
+  margin: 0 auto;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+input:focus:invalid {
+  color: red;
+  border: 2px solid red;
+}
+
+input:focus:valid {
+  border: 2px solid green;
 }
