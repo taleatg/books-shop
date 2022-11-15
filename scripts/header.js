@@ -12,9 +12,9 @@ function addHeader () {
                 <h1>Books shop</h1>
             </a>
             <div class="cart-wrapper">
-                <div class="final-price">$0</div>
+                <div class="final-price">${localStorage.getItem('final price') || '$0'}</div>
                 <div class="cart">
-                    <div class="number-of-books">0</div>
+                    <div class="number-of-books">${localStorage.getItem('number of books') || '0'}</div>
                 </div>
             </div>
         </div>

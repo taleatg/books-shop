@@ -1,6 +1,6 @@
-import {body, bookDescription} from './instance.js';
+import { body, bookDescription, createOverlay } from './instance.js';
 
-let selectedBooks = [];
+let selectedBooks = JSON.parse(localStorage.getItem('selected books')) || [];
 
 function addBookToCart () {
     const booksWrapper = document.querySelector('.books-wrapper');
@@ -27,17 +27,19 @@ function addBook (book) {
         selectedBooks.push(book);
         finalPrice.innerHTML = '$' + (+finalPrice.textContent.slice(1) + book.price);
         numberOfBooks.innerHTML = String(selectedBooks.length);
+
+        localStorage.setItem('selected books', JSON.stringify(selectedBooks));
+        localStorage.setItem('final price', finalPrice.textContent);
+        localStorage.setItem('number of books', numberOfBooks.textContent);
     }
 }
 
 function openTheCart () {
     const cart = document.querySelector('.cart-wrapper');
-    const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
 
     cart.addEventListener('click', () => {
         body.classList.add('no-scrolling');
-        body.append(overlay);
+        createOverlay();
         createCartBlock();
     })
 }
@@ -105,9 +107,13 @@ function deleteBook () {
                 } else {
                     finalPrice.innerHTML = '$' + (+finalPrice.textContent.slice(1) - el.price);
                     numberOfBooks.innerHTML = String(selectedBooks.length - 1);
+
+                    localStorage.setItem('final price', finalPrice.textContent);
+                    localStorage.setItem('number of books', numberOfBooks.textContent);
                 }
             });
 
+            localStorage.setItem('selected books', JSON.stringify(selectedBooks));
             createCartBlock();
         }
     })

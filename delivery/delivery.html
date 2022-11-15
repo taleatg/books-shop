@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Delivery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/delivery.css">
     <link rel="icon" href="/assets/icon.ico">
 </head>
@@ -25,27 +26,74 @@
         <form class="form">
 
             <label class="name">
-                First name
-                <input type="text" minlength="4" class="first" placeholder="Name" required>
-                Last name
-                <input type="text" minlength="5" class="last" placeholder="Surname" required>
+                <div class="input-field">
+                    First name
+                    <input
+                            type="text"
+                            name="first name"
+                            class="first"
+                            placeholder="Name"
+                            pattern="[a-zA-Z]{4,}"
+                            required>
+                    <span class="error">The field is invalid! The length not less than 4 symbols, strings only, without spaces</span>
+                </div>
+                <div class="input-field">
+                    Last name
+                    <input
+                            type="text"
+                            name="last name"
+                            class="last"
+                            placeholder="Surname"
+                            pattern="[a-zA-Z]{5,}"
+                            required>
+                    <span class="error">The field is invalid! The length not less than 5 symbols, strings only, without spaces</span>
+                </div>
             </label>
 
-            <label class="date">Delivery date
-                <input type="date" required>
+            <label class="date input-field">
+                Delivery date
+                <input
+                        name="delivery date"
+                        class="delivery-date"
+                        type="date"
+                        required>
+                <span class="error">The field is invalid! Select the date. Not earlier than the next day</span>
             </label>
 
             <label class="address">
-                Street
-                <input type="text" minlength="5" class="street" placeholder="Street" required>
+                <div class="input-field">
+                    Street
+                    <input
+                            type="text"
+                            name="street"
+                            class="street"
+                            placeholder="Street"
+                            pattern="[a-zA-Z0-9]{5,}"
+                            required>
+                    <span class="error">The field is invalid! The length not less than 5 symbols, the numbers are allowed</span>
+                </div>
                 <div class="address__number">
-                    <div class="number">
+                    <div class="number input-field">
                         House number
-                        <input type="number" min="1" class="house" placeholder="House number" required>
+                        <input
+                                type="text"
+                                name="house"
+                                class="house"
+                                placeholder="House number"
+                                pattern="[0-9]{1,}"
+                                required>
+                        <span class="error">The field is invalid! Only positive numbers</span>
                     </div>
-                    <div class="number">
+                    <div class="number input-field">
                         Flat number
-                        <input type="number" class="flat" placeholder="Flat number" required>
+                        <input
+                                type="text"
+                                name="flat"
+                                class="flat"
+                                placeholder="Flat number"
+                                pattern="[0-9]{0,}-{0,1}[0-9]{0,}$"
+                                required>
+                        <span class="error">The field is invalid! Only positive numbers, the dash symbol is allowed. Example: 1-37</span>
                     </div>
                 </div>
             </label>
@@ -54,11 +102,11 @@
                 Payment information
                 <div class="payment__type">
                     <label class="radiobutton">
-                        <input type="radio" name="payment" value="Cash" checked>
+                        <input type="radio" name="payment" value="Cash" required>
                         Cash
                     </label>
                     <label class="radiobutton">
-                        <input type="radio" name="payment" value="Card">
+                        <input type="radio" name="payment" value="Card" required>
                         Card
                     </label>
                 </div>
@@ -67,24 +115,24 @@
             <div class="gifts">
                 Choose 2 gifts (optional):
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox">
                     <span>pack as a gift</span>
                 </label>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox">
                     <span>add postcard</span>
                 </label>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox">
                     <span>provide 2% discount to the next time</span>
                 </label>
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" class="checkbox">
                     <span>branded pen or pencil</span>
                 </label>
             </div>
 
-            <button type="submit" class="confirm-order">Confirm</button>
+            <button type="submit" class="submit disabled" disabled>Purchase</button>
         </form>
     </main>
     <footer class="footer">
@@ -101,5 +149,7 @@
             </div>
         </div>
     </footer>
+
+    <script type="module" src="deliveryForm.js"></script>
 </body>
 </html>

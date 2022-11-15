@@ -11,3 +11,9 @@ export const bookDescription = (book) => {
         </div>
     `;
 }
+
+export const createOverlay = () => {
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    body.append(overlay);
+}

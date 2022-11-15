@@ -1,9 +1,7 @@
-import { body, bookDescription } from './instance.js';
+import {body, bookDescription, createOverlay} from './instance.js';
 
 function addBookInformation (book) {
     const div = document.createElement('div');
-    const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
 
     div.innerHTML = `
         <div class="close">x</div>        
@@ -11,9 +9,10 @@ function addBookInformation (book) {
         <div class="description">${book.description}</div>
     `;
 
+    createOverlay();
     div.classList.add('book-information');
     body.classList.add('no-scrolling');
-    body.append(overlay, div);
+    body.appendChild(div);
 
     deleteBookInformation(div);
 }
