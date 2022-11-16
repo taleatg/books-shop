@@ -1,6 +1,7 @@
 import {body, bookDescription, createOverlay} from './instance.js';
 
 function addBookInformation (book) {
+    const fragment = new DocumentFragment();
     const div = document.createElement('div');
 
     div.innerHTML = `
@@ -12,7 +13,8 @@ function addBookInformation (book) {
     createOverlay();
     div.classList.add('book-information');
     body.classList.add('no-scrolling');
-    body.appendChild(div);
+    fragment.appendChild(div);
+    body.appendChild(fragment);
 
     deleteBookInformation(div);
 }

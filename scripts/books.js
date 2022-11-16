@@ -2,6 +2,7 @@ import { addBookInformation } from './bookInformation.js';
 import { bookDescription, body } from './instance.js';
 
 function addBooks () {
+    const fragment = new DocumentFragment();
     const div = document.createElement('div');
 
     fetch('/scripts/books.json')
@@ -9,10 +10,12 @@ function addBooks () {
         .then(data => data.forEach(el => div.appendChild(createBook(el))));
 
     div.classList.add('books-wrapper');
-    body.appendChild(div);
+    fragment.appendChild(div);
+    body.appendChild(fragment)
 }
 
 function createBook (book) {
+    const fragment = new DocumentFragment();
     const bookWrapper = document.createElement('div');
     bookWrapper.classList.add('book')
 
@@ -32,7 +35,8 @@ function createBook (book) {
     `;
 
     bookWrapper.prepend(showMore);
-    return bookWrapper;
+    fragment.appendChild(bookWrapper)
+    return fragment;
 }
 
 export {

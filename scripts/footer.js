@@ -1,6 +1,7 @@
 import { body } from './instance.js';
 
 function addFooter () {
+    const fragment = new DocumentFragment();
     const footer = document.createElement('footer');
 
     footer.classList.add('footer');
@@ -19,7 +20,8 @@ function addFooter () {
         </div>
     `
 
-    body.appendChild(footer);
+    fragment.appendChild(footer);
+    body.appendChild(fragment);
 }
 
 export {

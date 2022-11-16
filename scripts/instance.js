@@ -13,7 +13,10 @@ export const bookDescription = (book) => {
 }
 
 export const createOverlay = () => {
+    const fragment = new DocumentFragment();
     const overlay = document.createElement('div');
     overlay.classList.add('overlay');
-    body.append(overlay);
+
+    fragment.appendChild(overlay)
+    body.append(fragment);
 }

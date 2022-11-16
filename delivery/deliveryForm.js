@@ -79,6 +79,7 @@ function summarizedInformation () {
 
     form.addEventListener('submit' , (e) => {
         e.preventDefault();
+        const fragment = new DocumentFragment();
         const div = document.createElement('div');
         const formData = new FormData(form);
             div.classList.add('summarized-information');
@@ -87,7 +88,7 @@ function summarizedInformation () {
             <div class="delivery-title">The order created</div>
             <div class="delivery">
                 <div class="delivery__item"><b>Date:</b> ${formData.get('delivery date')}</div>
-                <div class="delivery__item"><b>The delivery address:</b> ${formData.get('street')} street house ${formData.get('house')} flat ${formData.get('flat')}</div>
+                <div class="delivery__item"><b>Delivery address:</b> ${formData.get('street')} street house ${formData.get('house')} flat ${formData.get('flat')}</div>
                 <div class="delivery__item"><b>Customer:</b> ${formData.get('first name')} ${formData.get('last name')}</div>
                 <div class="delivery__item"><b>Payment:</b> ${localStorage.getItem('final price')}</div>
             </div>
@@ -100,7 +101,8 @@ function summarizedInformation () {
         localStorage.setItem('number of books', '0');
 
         createOverlay();
-        body.appendChild(div);
+        fragment.appendChild(div);
+        body.appendChild(fragment);
         closeFormPage();
     })
 }

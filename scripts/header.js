@@ -1,6 +1,7 @@
 import { body } from './instance.js';
 
 function addHeader () {
+    const fragment = new DocumentFragment();
     const header = document.createElement('header');
 
     header.classList.add('header');
@@ -20,7 +21,8 @@ function addHeader () {
         </div>
     `
 
-    body.appendChild(header);
+    fragment.appendChild(header);
+    body.appendChild(fragment);
 }
 
 export {

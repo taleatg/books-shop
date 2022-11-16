@@ -46,6 +46,7 @@ function openTheCart () {
 
 function createCartBlock () {
     const overlay = document.querySelector('.overlay');
+    const basketFragment = new DocumentFragment();
     const basketWrapper = document.createElement('div');
     basketWrapper.classList.add('basket-wrapper');
 
@@ -68,8 +69,10 @@ function createCartBlock () {
         body.removeChild(document.querySelector('.basket-wrapper'));
     }
 
-    body.append(basketWrapper);
+    basketFragment.append(basketWrapper);
+    body.append(basketFragment);
 
+    const fragment = new DocumentFragment();
     const confirmOrCancel = document.querySelector('.confirm-or-cancel');
     const closeCart = document.createElement('div');
     closeCart.innerHTML = 'Close cart';
@@ -89,7 +92,8 @@ function createCartBlock () {
         location.href = '../delivery/delivery.html'
     })
 
-    confirmOrCancel.append(closeCart, confirmOrder);
+    fragment.append(closeCart, confirmOrder);
+    confirmOrCancel.appendChild(fragment);
     deleteBook();
 }
 
