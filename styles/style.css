@@ -9,6 +9,10 @@ a {
 }
 
 body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 100%;
   margin: 0 auto;
   font-size: 16px;
@@ -447,6 +451,13 @@ body .footer .links__item .rs-school {
 .basket-wrapper .confirm-or-cancel .close-cart {
   border: 2px solid darkred;
   color: darkred;
+}
+
+.add-book {
+  position: absolute;
+  top: 75px;
+  right: 110px;
+  color: white;
 }
 
 ::-webkit-scrollbar {

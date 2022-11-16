@@ -35,7 +35,7 @@
                             placeholder="Name"
                             pattern="[a-zA-Z]{4,}"
                             required>
-                    <span class="error">The field is invalid! The length not less than 4 symbols, strings only, without spaces</span>
+                    <span class="error">The field is invalid! At least 4 symbols, without spaces.</span>
                 </div>
                 <div class="input-field">
                     Last name
@@ -46,7 +46,7 @@
                             placeholder="Surname"
                             pattern="[a-zA-Z]{5,}"
                             required>
-                    <span class="error">The field is invalid! The length not less than 5 symbols, strings only, without spaces</span>
+                    <span class="error">The field is invalid! At least 5 symbols, without spaces.</span>
                 </div>
             </label>
 
@@ -57,7 +57,7 @@
                         class="delivery-date"
                         type="date"
                         required>
-                <span class="error">The field is invalid! Select the date. Not earlier than the next day</span>
+                <span class="error">The field is invalid! Select the date.</span>
             </label>
 
             <label class="address">
@@ -70,7 +70,7 @@
                             placeholder="Street"
                             pattern="[a-zA-Z0-9]{5,}"
                             required>
-                    <span class="error">The field is invalid! The length not less than 5 symbols, the numbers are allowed</span>
+                    <span class="error">The field is invalid! MinAt least 5 symbols, the numbers are allowed</span>
                 </div>
                 <div class="address__number">
                     <div class="number input-field">
@@ -93,7 +93,7 @@
                                 placeholder="Flat number"
                                 pattern="[0-9]{1,}|^[0-9]{1,}-{0,1}[0-9]{1,}$"
                                 required>
-                        <span class="error">The field is invalid! Only positive numbers, the dash symbol is allowed. Example: 1-37</span>
+                        <span class="error">The field is invalid! Example: 1-37 or 12</span>
                     </div>
                 </div>
             </label>

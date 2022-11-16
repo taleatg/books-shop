@@ -87,7 +87,7 @@ function summarizedInformation () {
         div.innerHTML = `
             <div class="delivery-title">The order created</div>
             <div class="delivery">
-                <div class="delivery__item"><b>Date:</b> ${formData.get('delivery date')}</div>
+                <div class="delivery__item"><b>Date:</b> ${formData.get('delivery date').split('-').reverse().join('.')}</div>
                 <div class="delivery__item"><b>Delivery address:</b> ${formData.get('street')} street house ${formData.get('house')} flat ${formData.get('flat')}</div>
                 <div class="delivery__item"><b>Customer:</b> ${formData.get('first name')} ${formData.get('last name')}</div>
                 <div class="delivery__item"><b>Payment:</b> ${localStorage.getItem('final price')}</div>
