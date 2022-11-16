@@ -125,5 +125,6 @@ function deleteBook () {
 
 export {
     addBookToCart,
+    addBook,
     openTheCart,
 }

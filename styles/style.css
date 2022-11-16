@@ -39,12 +39,12 @@ body .header .logo {
 }
 
 body .header .logo__icon {
-  width: 70px;
-  height: 60px;
+  width: 40px;
+  height: 30px;
 }
 
 body .header .logo h1 {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 body .header .cart-wrapper {
@@ -63,14 +63,14 @@ body .header .cart-wrapper .final-price {
 }
 
 body .header .cart-wrapper .cart {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 body .header .cart-wrapper .number-of-books {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 25px;
+  left: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,6 +137,17 @@ body .books-wrapper .book {
   background: whitesmoke;
 }
 
+body .books-wrapper .book .image {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+body .books-wrapper .book .drag {
+  opacity: 0.2;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 body .books-wrapper .book .price-block {
   position: absolute;
   bottom: 25px;
@@ -189,7 +200,7 @@ body .books-wrapper .book .show-more:hover {
   border-bottom: 1px solid;
 }
 
-body .books-wrapper .book .show-more:hover ~ .image img {
+body .books-wrapper .book .show-more:hover ~ .image-wrapper img {
   -webkit-transform: scale(1.08);
           transform: scale(1.08);
 }
@@ -218,7 +229,7 @@ body .title {
   font-size: 16px;
 }
 
-body .image img {
+body .image-wrapper img {
   width: 150px;
   height: 200px;
   display: -webkit-box;
@@ -233,6 +244,7 @@ body .image img {
 
 body .footer {
   background: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
 }
 
 body .footer .links {
@@ -257,12 +269,12 @@ body .footer .links__item:first-child {
 }
 
 body .footer .links__item .github {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 body .footer .links__item .rs-school {
-  height: 30px;
+  height: 20px;
 }
 
 .overlay {
@@ -302,7 +314,7 @@ body .footer .links__item .rs-school {
   top: 5px;
 }
 
-.book-information .image img {
+.book-information .image-wrapper img {
   width: 220px;
   height: 300px;
 }
@@ -321,7 +333,7 @@ body .footer .links__item .rs-school {
   text-align: center;
 }
 
-.book-information .image {
+.book-information .image-wrapper {
   margin: 20px 0 30px;
 }
 
@@ -387,7 +399,7 @@ body .footer .links__item .rs-school {
   padding-bottom: 20px;
 }
 
-.basket-wrapper .basket .selected-books .book .image img {
+.basket-wrapper .basket .selected-books .book .image-wrapper img {
   width: 100px;
   height: 150px;
 }

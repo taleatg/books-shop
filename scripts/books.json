@@ -50,7 +50,7 @@
   },
   {
     "author": "Bradley Meck Alex Young and Mike Cantelon",
-    "imageLink": "../assets/image/Node.js-in-action.png",
+    "imageLink": "../assets/image/Node.js-in-action.jpg",
     "title": "Node.js in Action",
     "price": 38,
     "description": "Node.js in Action, Second Edition is a thoroughly revised book based on the best-selling first edition. It starts at square one and guides you through all the features, techniques, and concepts you\"ll need to build production-quality Node applications."
@@ -64,7 +64,7 @@
   },
   {
     "author": "John Resig and Bear Bibeault",
-    "imageLink": "../assets/image/secrets-of-the-JavaScript-Ninja.png",
+    "imageLink": "../assets/image/secrets-of-the-JavaScript-Ninja.jpg",
     "title": "Secrets of the JavaScript Ninja",
     "price": 33,
     "description": "Secrets of the Javascript Ninja takes you on a journey towards mastering modern JavaScript development in three phases: design, construction, and maintenance. Written for JavaScript developers with intermediate-level skills, this book will give you the knowledge you need to create a cross-browser JavaScript library from the ground up."

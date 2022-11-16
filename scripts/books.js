@@ -1,5 +1,6 @@
 import { addBookInformation } from './bookInformation.js';
 import { bookDescription, body } from './instance.js';
+import { dragAndDrop } from './dragAndDrop.js';
 
 function addBooks () {
     const fragment = new DocumentFragment();
@@ -33,6 +34,8 @@ function createBook (book) {
             <div class="cart" data-book='${JSON.stringify(book)}'></div>
         </div>
     `;
+
+    dragAndDrop();
 
     bookWrapper.prepend(showMore);
     fragment.appendChild(bookWrapper)

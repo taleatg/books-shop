@@ -2,8 +2,8 @@ export const body = document.querySelector('body');
 
 export const bookDescription = (book) => {
     return `
-        <div class="image">
-            <img src=${book.imageLink} alt=${book.title}>
+        <div class="image-wrapper" draggable="true">
+            <img class="image" src=${book.imageLink} alt='${book.title}' id='${JSON.stringify(book)}'>
         </div>
         <div class="book-info">
             <div class="title">${book.title}</div>
