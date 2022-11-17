@@ -17,7 +17,7 @@ body {
   margin: 0 auto;
   font-size: 16px;
   font-family: Helvetica, sans-serif;
-  background: url(../assets/image/books.jpg);
+  background: url(/books-shop/assets/image/books.jpg);
   background-size: cover;
 }
 
@@ -242,7 +242,7 @@ body .cart {
   height: 25px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.1);
-  background-image: url(../assets/svg/cart.svg);
+  background-image: url(/books-shop/assets/svg/cart.svg);
   border-radius: 10px;
   -webkit-transition: 1s;
   transition: 1s;

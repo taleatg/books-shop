@@ -105,7 +105,7 @@ function createCartBlock () {
     })
 
     confirmOrder.addEventListener('click', () => {
-        location.href = '../delivery/delivery.html';
+        location.href = '/books-shop/delivery/delivery.html';
     })
 
     fragment.append(closeCart, confirmOrder);
