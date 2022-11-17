@@ -111,7 +111,7 @@ function closeFormPage () {
     const close = document.querySelector('.button-close');
 
     close.addEventListener('click', () => {
-        location.href = '../index.html';
+        location.href = '/books-shop/index.html';
     })
 }
 
