@@ -45,14 +45,15 @@ function openTheCart () {
         } else {
             const fragment = new DocumentFragment();
             const div = document.createElement('div');
+
             div.innerHTML = 'Add the book to cart';
             div.classList.add('add-book');
 
             fragment.appendChild(div);
-            body.appendChild(fragment);
+            cart.appendChild(fragment);
 
             setTimeout(() => {
-                body.removeChild(div);
+                cart.removeChild(div);
             }, 1000);
         }
     })
@@ -66,6 +67,7 @@ function createCartBlock () {
 
     basketWrapper.innerHTML = `
         <div class="basket">
+            <div class="basket__title">Order books</div>
             <div class="selected-books">
                 ${selectedBooks.map(el => `
                     <div class="book">

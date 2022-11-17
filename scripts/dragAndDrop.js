@@ -5,7 +5,7 @@ function dragAndDrop () {
     const basket = document.querySelector('.cart-wrapper');
     const booksArr = [...books];
 
-    booksArr.map(book => {
+    booksArr.forEach(book => {
         book.addEventListener('dragstart', (e) => {
             e.target.classList.add('drag');
             e.dataTransfer.setData('id', e.target.id);

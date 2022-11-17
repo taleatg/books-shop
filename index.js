@@ -4,7 +4,7 @@ import { addFooter } from './scripts/footer.js';
 import { addBookToCart, openTheCart } from './scripts/cart.js';
 
 addHeader();
-addBooks();
+await addBooks();
 addFooter();
 addBookToCart();
 openTheCart();
