@@ -6,7 +6,7 @@ async function addBooks () {
     const fragment = new DocumentFragment();
     const div = document.createElement('div');
 
-    await fetch('/scripts/books.json')
+    await fetch('/books-shop/scripts/books.json')
         .then(res => res.json())
         .then(data => data.forEach(el => div.appendChild(createBook(el))));
 
