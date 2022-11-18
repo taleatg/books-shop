@@ -9,7 +9,7 @@ function addHeader () {
     header.innerHTML = `
         <div class="header-wrapper">
             <a class="logo" href="/books-shop/index.html">
-                <img class="logo__icon" src="../assets/icon.ico" alt="icon">
+                <img class="logo__icon" src="./assets/icon.ico" alt="icon">
                 <h1>Books shop</h1>
             </a>
             <div class="invite">You are welcome to our bookstore</div>
