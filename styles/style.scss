@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
     font-size: 16px;
     font-family: Helvetica, sans-serif;
-    background: url(/books-shop/assets/image/books.jpg);
+    background: url(../assets/image/books.jpg);
     background-size: cover;
 
     .header {
@@ -185,7 +185,7 @@ body {
         height: 25px;
         padding: 5px;
         background-color: rgba(0, 0, 0, 0.1);
-        background-image: url(/books-shop/assets/svg/cart.svg);
+        background-image: url(../assets/svg/cart.svg);
         border-radius: 10px;
         transition: 1s;
         cursor: pointer;
